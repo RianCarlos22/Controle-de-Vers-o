@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        Animal cachorro = new Cachorro("Rex", 5);
+        Animal gato = new Gato("Mia", 3);
+
+        cachorro.comer();
+        cachorro.emitirSom();
+        ((Cachorro) cachorro).latir();
+
+        gato.comer();
+        gato.emitirSom();
+        ((Gato) gato).miar();
+    }
+}
