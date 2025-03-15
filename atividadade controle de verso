@@ -1,14 +1,32 @@
-public class Main {
-    public static void main(String[] args) {
-        Animal cachorro = new Cachorro("Rex", 5);
-        Animal gato = new Gato("Mia", 3);
+ATIVIDADE EM GRUPO 
+Bateria.java (Subclasse)
+public class Bateria extends Instrumento {
+    private int numeroDeTambores;
 
-        cachorro.comer();
-        cachorro.emitirSom();
-        ((Cachorro) cachorro).latir();
+    public Bateria(String nome, String marca, String tipo, int numeroDeTambores) {
+        super(nome, marca, tipo);
+        this.numeroDeTambores = numeroDeTambores;
+    }
 
-        gato.comer();
-        gato.emitirSom();
-        ((Gato) gato).miar();
+    public int getNumeroDeTambores() {
+        return numeroDeTambores;
+    }
+
+    @Override
+    public void tocar() {
+        System.out.println("Tocando a bateria " + getNome() + " da marca " + getMarca() + " com " + numeroDeTambores + " tambores.");
     }
 }
+TESTE
+public class Main {
+    public static void main(String[] args) {
+        Instrumento violao = new Violao("Stratocaster", "Fender", "Elétrico", 6);
+        Instrumento piano = new Piano("Grand Piano", "Yamaha", "Acústico", 88);
+        Instrumento bateria = new Bateria("Tama Imperialstar", "Tama", "Eletrônica", 5);
+
+        violao.tocar();
+        piano.tocar();
+        bateria.tocar();
+    }
+}
+
